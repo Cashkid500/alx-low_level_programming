@@ -17,4 +17,3 @@ int print_last_digit(int x)
 	_putchar(x + '0');
 	return (x);
 }
-© 2022 GitHub, Inc.
