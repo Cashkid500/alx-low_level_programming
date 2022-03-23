@@ -1,28 +1,24 @@
 #include "main.h"
 
-/**
- * leet - encode a string into 1337
- * @s: string
- * Return: encoded string `s`
- */
+#define LEETIN "aAeEoOtTlL"
+#define LEETOUT "4433007711"
 
+/**
+ * leet - encodes a string into 1337
+ * @s: the string to encode
+ *
+ * Return: char pointer
+ */
 char *leet(char *s)
 {
-	int i;
+	char *ret = s, *leetin = LEETIN, *leetout = LEETOUT;
+	int i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (; *s; s++)
 	{
-		while (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-		while (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-		while (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-		while (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-		while (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
+		for (i = 0; leetin[i]; i++)
+			if (*s == leetin[i])
+				*s = leetout[i];
 	}
-
-	return (s);
+	return (ret);
 }
